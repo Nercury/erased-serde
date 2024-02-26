@@ -680,7 +680,7 @@ where
 
 serialize_trait_object!(Serialize);
 
-struct MakeSerializer<TraitObject>(TraitObject);
+pub struct MakeSerializer<TraitObject>(TraitObject);
 
 impl<'a> serde::Serializer for MakeSerializer<&'a mut (dyn Serializer + '_)> {
     type Ok = ();

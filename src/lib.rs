@@ -124,12 +124,12 @@ extern crate std;
 mod macros;
 
 mod any;
-mod de;
-mod error;
+pub mod de;
+pub mod error;
 mod features_check;
 mod map;
-mod sealed;
-mod ser;
+pub mod sealed;
+pub mod ser;
 
 pub use crate::de::{deserialize, Deserializer};
 pub use crate::error::{Error, Result};

@@ -13,11 +13,11 @@ pub struct Error {
 /// Result type alias where the error is `erased_serde::Error`.
 pub type Result<T> = core::result::Result<T, Error>;
 
-pub(crate) fn erase_de<E: serde::de::Error>(e: E) -> Error {
+pub fn erase_de<E: serde::de::Error>(e: E) -> Error {
     serde::de::Error::custom(e)
 }
 
-pub(crate) fn unerase_de<E: serde::de::Error>(e: Error) -> E {
+pub fn unerase_de<E: serde::de::Error>(e: Error) -> E {
     e.as_serde_de_error()
 }
 
